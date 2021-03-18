@@ -1,0 +1,555 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Colors */
+$color-white: #ffffff;
+$color-insignia: #30305D;
+$color-text: #123456;
+$color-h1: #643472;
+$color-hero-bg: linear-gradient(165deg, #FFD2BD 10%, #FFBDBC 90%);
+$color-summary-bg: #4F3472;
+$color-summary-bg2: #321D4E;
+$color-card: #FFF0F0;
+$color-card-shadow: #EFD1D1;
+
+$color-scale1: #9390F0;
+$color-scale2: #C690F0;
+$color-scale3: #EA86E6;
+$color-scale4: #EA86BC;
+$color-scale5: #F58095;
+
+$color-button: #A990F0;
+$color-button-shadow: #8B55E2;
+
+
+/* Core Elements */
+
+html, body {
+  background: $color-white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  color: $color-text;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* Typography */
+
+h1 {
+  font-size: 36px;
+  color: $color-h1;
+  font-weight: 700;
+  line-height: 1.1;
+  span { display: block; }
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 40px;
+  background-color: transparent;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 110px 35px;
+
+  span {
+    display: inline;
+    animation: colorChange 1s infinite;
+    animation-timing-function: linear;
+  }
+  span:nth-child(1) { color: $color-scale1; animation-delay: 0.0s;  }
+  span:nth-child(2) { color: $color-scale2; animation-delay: 0.2s; }
+  span:nth-child(3) { color: $color-scale3; animation-delay: 0.4s; }
+  span:nth-child(4) { color: $color-scale4; animation-delay: 0.6s; }
+  span:nth-child(5) { color: $color-scale5; animation-delay: 0.8s; }
+}
+h3 {
+  font-size: 20px;
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+  span { display: block; }
+}
+
+p {
+  font-size: 18px;
+}
+
+.button {
+  background-color: $color-button;
+  box-shadow: 4px 4px 0px $color-button-shadow;
+  color: $color-white;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: transform .1s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    transform-origin: 50% 50%;
+  }
+  &:active {
+    background-color: $color-white;
+    color: $color-summary-bg;
+    box-shadow: $color-summary-bg2;
+  }
+}
+
+@keyframes mailShake {
+  0% { transform: rotate(0deg) }
+  3% { transform: rotate(-35deg) }
+  6% { transform: rotate(25deg) }
+  9% { transform: rotate(-18deg) }
+  12% { transform: rotate(12deg) }
+  15% { transform: rotate(-5deg) }
+  18% { transform: rotate(3deg) }
+  21% { transform: rotate(0deg) }
+  100% { transform: rotate(0deg) }
+}
+
+@keyframes phoneFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes phoneShake {
+  0% { transform: rotate(0deg); transform: scale(1.1); }
+  10% { transform: rotate(-8deg); transform: translateX(-20px); }
+  20% { transform: rotate(11deg); transform: translateX(18px); }
+  30% { transform: rotate(-14deg);  }
+  45% { transform: rotate(12deg); transform: translateX(-25px); transform: scale(.8); }
+  60% { transform: rotate(-5deg); }
+  70% { transform: rotate(3deg); transform: translateX(8px); }
+  80% { transform: rotate(0deg); transform: scale(1); }
+  100% { transform: rotate(0deg);  }
+}
+
+@keyframes colorChange {
+  0% { color: $color-scale1; }
+  20% { color: $color-scale2; }
+  40% { color: $color-scale3; }
+  60% { color: $color-scale4; }
+  80% { color: $color-scale5; }
+  100% { color: $color-scale1; }
+}
+
+.footer-card {
+  img {
+    animation: mailShake 5s infinite;
+    animation-timing-function: linear;
+  }
+}
+
+
+/* Section Styles */
+
+
+
+section {
+  overflow: hidden;
+  position: relative;
+  .margins {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+section.hero {
+  position: relative;
+  background: $color-hero-bg;
+  overflow: hidden;
+
+  .hero-top {
+    position: absolute;
+    top: 0;
+    right: -50%;
+  }
+
+  .hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+  }
+
+  nav {
+    .margins {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 48px;
+      img { margin: 0; }
+      a { margin: 16px 0; }
+    }
+
+  }
+  .hero-content {
+    position: relative;
+    .hero-text {
+      p { padding: 0 20px; }
+      .button-lockup {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        .google-play img { width: 190px;}
+        strong {
+          text-align: left;
+          line-height: 1.4;
+          padding-top: 12px;
+          padding-left: 12px;
+          span { display: block;}
+        }
+      }
+    }
+    .hero-video {
+      position: relative;
+      width: 300px;
+      margin: 0 auto;
+      video {
+        position: relative;
+        width: 100%;
+        border: 12px solid $color-text;
+        border-radius: 40px 40px 0 0;
+        margin-bottom: -30px;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        text-align: center;
+        img { width: 36px; height: 36px; }
+        p { font-size: 16px; margin: 0; }
+
+      }
+    }
+  }
+
+
+}
+
+section.summary {
+  overflow: visible;
+  div.vmargins {
+    padding: 60px 0 90px;
+    p { padding: 0 40px; }
+  }
+  h2 { background-image: url(../img/squiggle-summary.svg); }
+  div.tableau {
+    background: $color-summary-bg url(../img/summary-background.svg) -10px top no-repeat;
+    background-size: auto 300px;
+    padding-top: 190px;
+    .margins {
+      position: relative;
+      padding: 0;
+      background-color: $color-summary-bg2;
+
+      text-align: left;
+      overflow: visible;
+
+      p {
+        color: $color-white;
+        padding: 50px;
+        text-align: center;
+      }
+      .illo-apps { width: 135px; position: absolute; top: -220px; left: 10px; }
+      .illo-phone {
+        width: 229px;
+        position: absolute;
+        top: -260px;
+        left: 50px;
+        animation-name: phoneFloat;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        &:hover {
+          animation-name: phoneShake;
+          animation-duration: .7s;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in-out;
+        }
+      }
+    }
+
+  }
+}
+
+section.features {
+  h2 { background-image: url(../img/squiggle-features.svg); margin-top: 60px; margin-bottom: 60px; }
+  ul.feature-list {
+    li {
+      padding: 0 40px 60px 40px;
+
+      &:last-child { padding-bottom: 0; }
+      img {
+        width: 260px;
+        transition: transform .1s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+      }
+    }
+  }
+}
+
+section.footer {
+  padding: 60px 0 150px;
+  h2 {
+    background-image: url(../img/squiggle-contact.svg);
+    margin-bottom: 100px;
+  }
+  .footer-card {
+    position: relative;
+    width: 90%;
+    background-color: $color-card;
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 0 40px 40px 40px;
+    box-shadow: 0px 6px 0px $color-card-shadow;
+    img { position: relative; top: -40px; margin-bottom: -40px; }
+    .button { display: block; width: 100%; }
+  }
+
+  .illo-bg { position: absolute; bottom: -35px; left: 50%; margin-left: -1000px; }
+  .illo-flankleft { position: absolute; bottom: -20px; left: 0; }
+  .illo-flankright { position: absolute; bottom: 0; right: 0; display: none; }
+  .illo-ubble { position: absolute; bottom: -15px; left: 50%; margin-left: -95px; display: none;}
+  .illo-floraleft { position: absolute; bottom: 0; left: 50%; margin-left: -76px; }
+  .illo-floraright { position: absolute; bottom: 0; right: 50px; display: none; }
+
+}
+
+section.insignia {
+  background-color: $color-insignia;
+  padding: 40px;
+}
+
+@media screen and (min-width: 480px) {
+
+  section.summary {
+    div.vmargins {
+      padding: 80px 0 110px;
+      p { padding: 0 25%; }
+    }
+    div.tableau {
+      background-position: 60px top;
+      .margins {
+        .illo-apps { left: 60px; }
+        .illo-phone { left: 100px; }
+      }
+    }
+  }
+
+
+}
+
+
+@media screen and (min-width: 640px) {
+
+  h1 { font-size: 48px; }
+  h2 {  }
+  h3 {  }
+
+  section {
+    width: 100%;
+    .margins {
+      margin: 0 auto;
+    }
+  }
+
+  section.hero {
+    .hero-content {
+      div.margins {
+        .hero-text {
+          margin: 0 auto;
+          width: 70%;
+          p { padding: 0 10%; }
+        }
+      }
+    }
+  }
+
+  section.summary {
+    div.vmargins {
+      p { padding: 0 30%; }
+    }
+    div.tableau {
+      background-size: auto;
+      background-position: center top;
+      padding-top: 280px;
+      .margins {
+        background-color: $color-summary-bg2;
+        .illo-apps { width: 176px; top: -320px; left: 100px; }
+        .illo-phone { width: 318px; top: -360px; left: 170px; }
+        p { padding: 90px 20%; }
+      }
+    }
+  }
+
+  section.features {
+    ul.feature-list {
+      li { padding: 0 25%; }
+    }
+  }
+
+  section.footer {
+    .footer-card {
+      width: 490px;
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  h1 { font-size: 60px; }
+  h2 { font-size: 36px; background-size: 160px 50px; padding-top: 60px; }
+  h3 { font-size: 24px; }
+  p  { font-size: 20px; }
+
+  .bigger { font-size: 22px; }
+
+  section {
+    .margins {
+      width: 980px;
+    }
+  }
+
+
+  section.hero {
+
+    .hero-top { right: -13%; }
+    .hero-bottom { left: -13%; }
+
+    nav {
+      padding-top: 30px;
+    }
+
+    .hero-content {
+      text-align: left;
+
+      div.margins {
+        display: flex;
+        justify-content: space-between;
+        .hero-text {
+          width: 60%;
+          p { width: 90%; padding: 0; }
+          .button-lockup {
+            justify-content: flex-start;
+            margin: 30px 0 0 -10px;
+            margin-left: -10px;
+          }
+        }
+        .hero-video {
+          width: 35%;
+          video {
+            border-radius: 50px 50px 0 0;
+            border: 16px solid $color-text;
+          }
+          .video-overlay {
+            top: 40px;
+          }
+        }
+      }
+    }
+
+  }
+
+  section.summary {
+    div.vmargins {
+      padding: 80px 0 110px;
+      p { width: 40%; padding: 0; margin: 0 auto; }
+    }
+    div.tableau {
+
+      background: $color-summary-bg;
+      padding-top: 0;
+      .margins {
+        width: 1024px;
+        background: $color-summary-bg url(../img/summary-background.svg) -30px top no-repeat;
+        p { text-align: left; background-color: transparent; padding: 70px 0 70px 680px; }
+        .illo-apps { position: absolute; left: 30px; top: -15px; }
+        .illo-phone { width: 348px; position: absolute; left: 90px; top: -80px; }
+      }
+
+    }
+  }
+
+  section.features {
+    h2 { margin: 110px 0 80px; }
+    ul.feature-list {
+      width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      li {
+        img { width: 100%; }
+        width: 28%;
+        padding: 0;
+      }
+    }
+  }
+
+
+  section.footer {
+    .illo-flankright { display: block; }
+    .illo-ubble { display: block;}
+    .illo-floraleft { left: 50px; margin-left: 0; }
+    .illo-floraright { display: block; }
+
+
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  h1 { font-size: 72px; }
+
+  .bigger { font-size: 24px; }
+
+  section {
+    .margins {
+      width: 1200px;
+    }
+  }
+
+  section.hero {
+    .hero-top { right: -5%; }
+    .hero-bottom { left: -5%; }
+
+    .hero-content {
+      div.margins {
+        .hero-text {
+          p { width: 80%; }
+          .button-lockup {
+            margin: 40px 0 0 -10px;
+          }
+        }
+      }
+    }
+  }
+
+  section.summary {
+    div.tableau {
+      .margins {
+        width: 1400px;
+        background: $color-summary-bg url(../img/summary-background.svg) -10px top no-repeat;
+        p { background-color: transparent; padding: 90px 100px 90px 750px; }
+        .illo-apps { left: 60px; top: -15px; }
+        .illo-phone { left: 120px; top: -80px; }
+      }
+
+    }
+  }
+
+}
