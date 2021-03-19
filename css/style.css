@@ -275,7 +275,7 @@ section.hero nav .margins {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 48px;
+  padding-bottom: 16px;
 }
 section.hero nav .margins img {
   margin: 0;
@@ -577,6 +577,9 @@ section.insignia {
   }
   section.hero nav {
     padding-top: 30px;
+  }
+  section.hero nav .margins {
+    padding-bottom: 48px;
   }
   section.hero .hero-content {
     text-align: left;

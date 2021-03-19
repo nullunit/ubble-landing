@@ -210,7 +210,7 @@ section.hero {
       position: relative;
       display: flex;
       justify-content: space-between;
-      padding-bottom: 48px;
+      padding-bottom: 16px;
       img { margin: 0; }
       a { margin: 16px 0; }
     }
@@ -391,6 +391,7 @@ section.insignia {
   }
 
   section.hero {
+
     .hero-content {
       div.margins {
         .hero-text {
@@ -457,6 +458,9 @@ section.insignia {
 
     nav {
       padding-top: 30px;
+      .margins {
+        padding-bottom: 48px;
+      }
     }
 
     .hero-content {
