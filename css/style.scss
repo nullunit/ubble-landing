@@ -49,7 +49,20 @@ h1 {
   color: $color-h1;
   font-weight: 700;
   line-height: 1.1;
-  span { display: block; }
+  span {
+    display: block;
+    span {
+      display: inline;
+      position: relative;
+      animation: colorChange 1s infinite;
+      animation-timing-function: linear;
+    }
+    span:nth-child(5n+1) { color: $color-scale1; animation-delay: 0.0s;  }
+    span:nth-child(5n+2) { color: $color-scale2; animation-delay: 0.2s; }
+    span:nth-child(3) { color: $color-scale3; animation-delay: 0.4s; }
+    span:nth-child(4) { color: $color-scale4; animation-delay: 0.6s; }
+    span:nth-child(5) { color: $color-scale5; animation-delay: 0.8s; }
+  }
 }
 h2 {
   font-size: 24px;
@@ -62,6 +75,7 @@ h2 {
 
   span {
     display: inline;
+    position: relative;
     animation: colorChange 1s infinite;
     animation-timing-function: linear;
   }
@@ -134,12 +148,18 @@ p {
 }
 
 @keyframes colorChange {
-  0% { color: $color-scale1; }
+  0% { color: $color-scale1; top: 0; }
   20% { color: $color-scale2; }
-  40% { color: $color-scale3; }
+  40% { color: $color-scale3; top: 10px;}
   60% { color: $color-scale4; }
   80% { color: $color-scale5; }
-  100% { color: $color-scale1; }
+  100% { color: $color-scale1; top: 0;}
+}
+
+@keyframes ubbleSquash {
+  0% { transform: scale(1, 1);  }
+  50% { transform: scale(1, .85); }
+  100% { transform: scale(1, 1); }
 }
 
 .footer-card {
@@ -149,6 +169,11 @@ p {
   }
 }
 
+.illo-ubble, .illo-floraleft, .illo-floraright  {
+  transform-origin: 50% 100%;
+  animation: ubbleSquash 5s infinite;
+  animation-timing-function: ease-in-out;
+}
 
 /* Section Styles */
 
@@ -321,7 +346,7 @@ section.footer {
   .illo-bg { position: absolute; bottom: -35px; left: 50%; margin-left: -1000px; }
   .illo-flankleft { position: absolute; bottom: -20px; left: 0; }
   .illo-flankright { position: absolute; bottom: 0; right: 0; display: none; }
-  .illo-ubble { position: absolute; bottom: -15px; left: 50%; margin-left: -95px; display: none;}
+  .illo-ubble { position: absolute; bottom: -2px; left: 50%; margin-left: -95px; display: none;}
   .illo-floraleft { position: absolute; bottom: 0; left: 50%; margin-left: -76px; }
   .illo-floraright { position: absolute; bottom: 0; right: 50px; display: none; }
 
