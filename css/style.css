@@ -331,6 +331,12 @@ section.hero2 .hero-content .margins .hero-video .hoof {
   right: -7%;
   width: 45%;
 }
+section.hero2 .hero-content .margins .hero-video .bubble {
+  position: absolute;
+  top: 12%;
+  right: -3%;
+  width: 120px;
+}
 section.hero2 .hero-content .margins .hero-video .video-container {
   position: relative;
   width: 80%;
@@ -645,6 +651,11 @@ section.insignia {
   section.hero2 .hero-content .margins .hero-video .hoof {
     right: -8%;
     width: 45%;
+  }
+  section.hero2 .hero-content .margins .hero-video .bubble {
+    top: 8%;
+    right: 2%;
+    width: 140px;
   }
   section.hero2 .hero-content .margins .hero-video .video-container {
     width: 80%;

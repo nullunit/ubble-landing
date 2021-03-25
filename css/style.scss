@@ -244,6 +244,7 @@ section.hero2 {
         }
         .goat { position: absolute; bottom: -1px; left: 0; width: 35%; }
         .hoof { position: absolute; bottom: -1px; right: -7%; width: 45%; }
+        .bubble { position: absolute; top: 12%; right: -3%; width: 120px; }
         .video-container {
           position: relative;
           width: 80%;
@@ -505,6 +506,7 @@ section.insignia {
           .hero-apps { top: -11%; left: 3%; }
           .goat { left: -10%; width: 45%; }
           .hoof { right: -8%; width: 45%; }
+          .bubble { top: 8%; right: 2%; width: 140px; }
           .video-container {
             width: 80%;
             margin: 0 auto;
